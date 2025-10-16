@@ -9,18 +9,14 @@ const errorUpload = document.getElementById('desc-upload')
 const imgInput = document.getElementById('img');
 const gitHub = document.getElementById('github');
 
-
 imgInput.addEventListener("change", () => {
     if (imgInput.files.length > 0) {
         alert("Arquivo adicionado: " + imgInput.files[0].name);
     }
 })
 
-
-
 btn.addEventListener("click", () => {
     event.preventDefault();
-
 
     let imgValido = false;
     let nomeValido = false;
@@ -29,16 +25,10 @@ btn.addEventListener("click", () => {
     if (nome.value.trim() !== "") {
         nome.style.border = "2px solid green"
         messageError.style.display = "none";
-
-
         nomeValido = true;
-
-
     } else {
         messageError.style.display = "block";
         nome.style.border = "2px solid red"
-
-
     }
 
     if (email.value.trim() !== "" && email.value.includes("@")) {
@@ -52,12 +42,9 @@ btn.addEventListener("click", () => {
 
     const imgUpload = document.querySelector('.img-upload');
 
-
-
     if (imgInput.files.length !== 0) {
         errorUpload.textContent = "Arquivo correto";
         errorUpload.style.color = "green";
-
         const file = imgInput.files[0];
         if (file) {
             const reader = new FileReader();
@@ -65,7 +52,6 @@ btn.addEventListener("click", () => {
                 imgUpload.src = e.target.result;
             };
             reader.readAsDataURL(file);
-
         }
         imgValido = true;
     } else {
@@ -73,23 +59,18 @@ btn.addEventListener("click", () => {
         errorUpload.style.color = "#ff4d4d";
     }
 
-
-
     if (emailValido && nomeValido && imgValido) {
         esconder.style.display = "none";
-
         // 🔹 Gera a data do evento automaticamente (exemplo fixo: 31 Jan 2025)
         const eventDate = new Date(2025, 0, 31); // 0 = Janeiro
         const options = { month: "short", day: "numeric", year: "numeric" };
         const formattedDate = eventDate.toLocaleDateString("en-US", options);
         const location = "Curitiba, PR";
-
         // 🔹 Gera número do ingresso aleatório (ex: #01609)
         const ticketNumber = "#" + String(Math.floor(Math.random() * 99999)).padStart(5, "0");
 
         ingresso.innerHTML = `
         <H1>Congrats, <span class="nome">${nome.value}!</span> <br> Your ticket is ready.</H1>
-        
         <p>We've emailed your ticket to <br> <span class="email">${email.value}</span> and will send updates in <br> the run up to the event.</p>
         <div class="ticket-container">
             <div class="topo-ingresso">
@@ -109,7 +90,5 @@ btn.addEventListener("click", () => {
             <p class="ticket-number">${ticketNumber}</p>
         </div>
     `
-
-
     }
 })
