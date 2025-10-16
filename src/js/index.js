@@ -74,16 +74,16 @@ btn.addEventListener("click", () => {
         <p>We've emailed your ticket to <br> <span class="email">${email.value}</span> and will send updates in <br> the run up to the event.</p>
         <div class="ticket-container">
             <div class="topo-ingresso">
-                <img class="logo-full" src="../../assets/images/logo-mark.svg"/>
+                <img class="logo-full" src="assets/images/logo-mark.svg"/>
                 <h2>Coding Conf</h2>
             </div>
             <p class="data-local">${formattedDate} / ${location}</p>
-            <img class="ticket" src="../../assets/images/pattern-ticket.svg" alt="ticket"/>
+            <img class="ticket" src="assets/images/pattern-ticket.svg" alt="ticket"/>
             <img class="perfil" src="${URL.createObjectURL(imgInput.files[0])}" alt="avatar"/>
             <div class="info-ticket">
                 <p class="nome-ticket">${nome.value}</p>
                 <div class="github-info">
-                    <img style="height: 30px; width: 30px;" src="../../assets/images/icon-github.svg"
+                    <img style="height: 30px; width: 30px;" src="assets/images/icon-github.svg"
                     <p class="github-username">${gitHub.value}</p>
                 </div>
             </div>

@@ -1,6 +1,6 @@
 @font-face {
     font-family: "Minha fonte";
-    src: url(../../assets/fonts/Inconsolata-VariableFont_wdth\,wght.ttf) format('woff2');
+    src: url(assets/fonts/Inconsolata-VariableFont_wdth\,wght.ttf) format('woff2');
 }
 
 body {
